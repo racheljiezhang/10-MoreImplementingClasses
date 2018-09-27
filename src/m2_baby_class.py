@@ -2,8 +2,8 @@
 A   Baby   class and methods that use the Baby class.
 
 Authors: David Mutchler, Vibha Alangar, Dave Fisher, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Rachel Zhang.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -37,9 +37,8 @@ def main():
         for j in range(4):
             mckinley.hour_passes()
 
-
 # ----------------------------------------------------------------------
-# TODO: 2. Implement a class called   Baby   that has a constructor and
+# DONE: 2. Implement a class called   Baby   that has a constructor and
 #   two methods, as described below.  Your finished Baby class should
 #   cause the code above to display the expected output.  Hint: Your
 #   class will need instance variables that you must figure out.
@@ -94,10 +93,32 @@ def main():
 #
 ########################################################################
 
+class Baby(object):
+    def __init__(self, name):
+        self.name = name
+        print('Hello Baby ' + self.name + '!')
+        self.hour = 1
+
+    def feed_baby(self):
+        print('Thank you for feeding Baby ' + self.name + '!')
+        self.hour = 1
+
+    def hour_passes(self):
+        if self.hour == 1:
+            print('Baby ' + self.name + 'is sleeping.')
+            self.hour = self.hour + 1
+        elif self.hour == 2:
+            print('Baby ' + self.name + ' is now awake. Time for food.')
+            self.hour = self.hour + 1
+        else:
+            print('Baby ' + self.name + ' is CRYING uncontrollably! Feed the Baby!')
+
+
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.
 # ----------------------------------------------------------------------
+
 if __name__ == '__main__':
     main()

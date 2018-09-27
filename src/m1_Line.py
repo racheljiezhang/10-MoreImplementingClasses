@@ -114,8 +114,7 @@ class Point(object):
                 formats.append('{:.' + str(decimal_places) + 'f}')
                 numbers.append(round(coordinate, decimal_places))
 
-        format_string = 'Point(' + formats[0] + ', ' + formats[1] + ')'
-        return format_string.format(numbers[0], numbers[1])
+
 
     def __eq__(self, p2):
         """
